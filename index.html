@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome to Real World Properties</title>
 
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 
@@ -273,5 +276,16 @@
   });
 </script>
 
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then(() => console.log("App Registered!"))
+        .catch((err) => console.log("App Failed:", err));
+    });
+  }
+</script>
+
 </body>
 </html>
+
